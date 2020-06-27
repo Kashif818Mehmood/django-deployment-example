@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My First Aap</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+  </head>
+  <body>
+    <h1>I am in index.html</h1>
+    <h2>Here are yourhghgh Access records</h2>
+    <div class="djangtwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site name</th>
+          <th>Date access</th>
+       </thead>
+        {% for acc in access_records %}
+        <tr>
+          <td>{{acc.name}}</td>
+          <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No accessrecor found</p>
+      {% endif %}
+     </div>
+  </body>
+</html>
